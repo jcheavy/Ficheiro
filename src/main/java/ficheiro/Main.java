@@ -27,7 +27,7 @@ public class Main {
 		Projeto p1 = new Projeto(1, "Contrução", data, d, 10, 20, 3);
 		Projeto p2 = new Projeto(2, "Escavação", data, d, 10, 20, 1);
 		Projeto p3 = new Projeto(3, "Terra Planagem", data, d, 10, 20, 4);
-		Projeto p4 = new Projeto(3, "Eletrico", data, d, 10, 20, 2);
+		Projeto p4 = new Projeto(4, "Eletrico", data, d, 10, 20, 2);
 		
 		ProjetoDAO dao = new ProjetoDAO();
 		

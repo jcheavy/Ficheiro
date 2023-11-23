@@ -13,6 +13,10 @@ public class Comp {
 	 * classe fontes
 	 */
 	public static Font taoma_14 = new Font("Taoma", Font.PLAIN, 14);
+	public static Font taoma_12 = new Font("Taoma", Font.PLAIN, 12);
+	
+	public static Font taoma_12_b = new Font("Taoma", Font.BOLD, 12);
+	
 	public static Font jokerman_20 = new Font("Jokerman", Font.PLAIN, 20);
 	static int style = Font.BOLD | Font.ITALIC;
 
@@ -52,5 +56,7 @@ public class Comp {
 	    //but.setMargin(new Insets(2, 1000, 2, 14));
 		return but;
 	}
+	
+	
 	
 }

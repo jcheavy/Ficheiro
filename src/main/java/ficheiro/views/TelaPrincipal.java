@@ -18,10 +18,11 @@ public class TelaPrincipal extends JFrame{
 	private JPanel panelPrincipal;
 	private JPanel panelEsquerdo;
 	private JButton btAdd;
+	private int panelCount = 0;
 	
 	public TelaPrincipal() {
 		
-	  panelPrincipal = new JPanel();
+	  panelPrincipal = new JPanel(new FlowLayout());
 	  
 	  panelEsquerdo =  new JPanel(new FlowLayout());
 	  panelEsquerdo.setPreferredSize(new Dimension(180,500));
@@ -39,6 +40,10 @@ public class TelaPrincipal extends JFrame{
 	  add(panelPrincipal, BorderLayout.CENTER);
 	  add(panelEsquerdo, BorderLayout.WEST);
 	  
+	  btAdd.addActionListener(ev ->{
+		  addPanelTarefa();
+	  });
+	  
 	  resolution();
 	  setVisible(true);
 	 
@@ -49,6 +54,13 @@ public class TelaPrincipal extends JFrame{
 		Toolkit t = Toolkit.getDefaultToolkit();
 		Dimension dimension = t.getScreenSize();
 		setSize((dimension.width + 5), (dimension.height - 38));
+	}
+	
+	private void addPanelTarefa() {
+		
+		TelaDados dados = new TelaDados(this, true);
+		
+		
 	}
 
 }

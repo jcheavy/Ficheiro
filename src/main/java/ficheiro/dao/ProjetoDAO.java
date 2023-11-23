@@ -22,7 +22,7 @@ public class ProjetoDAO implements GenericDAO<Projeto> {
 		conex = Conexao.getInstance().getConnection();
 		try {Statement statement = conex.createStatement();
 			statement.setQueryTimeout(30);
-			statement.executeUpdate("create table if not exists projeto (id serial primary key, nome string, dataInicio datetime, dataFim datetime, dx integer, dy integer, numIndex integer)");
+			statement.executeUpdate("create table if not exists projeto (id integer primary key autoincrement, nome string, dataInicio datetime, dataFim datetime, dx integer, dy integer, numIndex integer)");
 			
 		} catch (SQLException e) {
 			

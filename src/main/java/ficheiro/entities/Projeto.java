@@ -14,6 +14,16 @@ public class Projeto {
 	private int numIndex;
 	
 	public Projeto() {}
+	
+	public Projeto( String nome, Date dataInicio, Date dataFim, int dx, int dy, int index) {	
+		
+		this.nome = nome;
+		this.dataInicio = dataInicio;
+		this.dataFim = dataFim;
+		this.dx = dx;
+		this.dy = dy;
+		this.numIndex = index;
+	}
 
 	public Projeto(Integer id, String nome, Date dataInicio, Date dataFim, int dx, int dy, int index) {
 	
