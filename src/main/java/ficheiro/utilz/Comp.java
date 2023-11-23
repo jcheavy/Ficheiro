@@ -57,6 +57,18 @@ public class Comp {
 		return but;
 	}
 	
+	public static JButton btQuad2(String desc) {
+		JButton but = new JButton(desc);
+		but.setPreferredSize(new Dimension(80, 40));
+		but.setFont(taoma_14);
+		but.setBackground(azul_esc);
+		but.setForeground(Color.red);
+		but.setBorder(javax.swing.BorderFactory.createLineBorder(verde, 1));
+		but.setRequestFocusEnabled(false);
+		but.setRolloverEnabled(false);
+	    //but.setMargin(new Insets(2, 1000, 2, 14));
+		return but;
+	}
 	
 	
 }

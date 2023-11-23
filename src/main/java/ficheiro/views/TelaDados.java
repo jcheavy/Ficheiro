@@ -22,6 +22,8 @@ public class TelaDados extends JDialog {
 	private JLabel lbDataInicio;
 	private JLabel lbDataFim;
 	private JButton btPicker;
+	private JButton btSalvar;
+	private JButton btCancelar;
 
 	private DatePicker datePickerIni;
 	private DatePicker datePickerFim;
@@ -52,6 +54,10 @@ public class TelaDados extends JDialog {
 		btPicker.setIcon(dateIcon);
 
 		datePickerFim = datePickerIcon(dateIcon);
+		
+		
+		btSalvar = Comp.btQuad2("Salvar");
+		btCancelar = Comp.btQuad2("Cancelar");
 
 		lbNome.setBounds(15, 20, 54, 20);
 		txfNome.setBounds(74, 20, 190, 20);
@@ -61,6 +67,9 @@ public class TelaDados extends JDialog {
 
 		lbDataFim.setBounds(15, 90, 90, 20);
 		datePickerFim.setBounds(74, 90, 190, 30);
+		
+		btSalvar.setBounds(274, 20, 79, 39);
+		btCancelar.setBounds(274, 80, 79, 39);
 
 		getContentPane().add(lbNome);
 		getContentPane().add(txfNome);
@@ -69,6 +78,9 @@ public class TelaDados extends JDialog {
 
 		getContentPane().add(lbDataFim);
 		getContentPane().add(datePickerFim);
+		
+		getContentPane().add(btSalvar);
+		getContentPane().add(btCancelar);
 
 		/// setLocationRelativeTo(null);
 		setLocation(200, 200);
