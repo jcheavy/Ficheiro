@@ -5,8 +5,8 @@ import java.time.LocalDate;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import com.github.lgooddatepicker.components.DatePicker;
@@ -27,9 +27,14 @@ public class TelaDados extends JDialog {
 
 	private DatePicker datePickerIni;
 	private DatePicker datePickerFim;
+	
+	private TelaPrincipal telaPrincipal;
 
-	public TelaDados(JFrame frame, boolean modal) {
-		super(frame, modal);
+	public TelaDados(TelaPrincipal telaPrincipal, boolean modal) {
+		super(telaPrincipal, modal);
+		
+		this.telaPrincipal = telaPrincipal;
+		
 		setTitle("Dados do Projeto");
 		getContentPane().setLayout(null);
 
@@ -80,7 +85,15 @@ public class TelaDados extends JDialog {
 		getContentPane().add(datePickerFim);
 		
 		getContentPane().add(btSalvar);
-		getContentPane().add(btCancelar);
+		getContentPane().add(btCancelar);		
+			
+		btCancelar.addActionListener(ev -> {
+			this.dispose();
+		});
+	
+		btSalvar.addActionListener(ev -> {
+			salvarProjeto();
+		});
 
 		/// setLocationRelativeTo(null);
 		setLocation(200, 200);
@@ -89,6 +102,7 @@ public class TelaDados extends JDialog {
 		setVisible(true);
 
 	}
+	
 
 	public JTextField getTxfNome() {
 		return txfNome;
@@ -123,4 +137,17 @@ public class TelaDados extends JDialog {
 		btPicker.setIcon(Icon);
 		return picker;
 	}
+	
+	public void salvarProjeto() {
+		
+		if( !txfNome.getText().isEmpty()) {
+			telaPrincipal.addProjeto(txfNome.getText().toUpperCase());            
+            this.dispose();
+			
+		}else {
+			JOptionPane.showMessageDialog(null, "O campo nome não pode ser vazio");
+		}
+	}
+
+
 }

@@ -58,8 +58,17 @@ public class TelaPrincipal extends JFrame{
 	
 	private void addPanelTarefa() {
 		
-		TelaDados dados = new TelaDados(this, true);
+		TelaDados dados = new TelaDados(this, true);			
+	}
+	
+public void addProjeto(String titulo) {		
 		
+		ProjetoPanel quadro = new ProjetoPanel();
+		quadro.setTitulo(titulo);
+		
+		panelPrincipal.add(quadro);
+		panelPrincipal.revalidate();
+		panelPrincipal.repaint();
 		
 	}
 

@@ -15,6 +15,13 @@ public class Projeto {
 	
 	public Projeto() {}
 	
+public Projeto(Integer id, String nome, Date dataInicio, Date dataFim) {	
+		
+		this.nome = nome;
+		this.dataInicio = dataInicio;
+		this.dataFim = dataFim;		
+	}
+	
 	public Projeto( String nome, Date dataInicio, Date dataFim, int dx, int dy, int index) {	
 		
 		this.nome = nome;

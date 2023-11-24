@@ -14,6 +14,10 @@ public class ProjetoService {
 		this.dao = dao;
 	}
 	
+	public void salvar(Projeto projeto) {
+		dao.adiciona(projeto);
+	}
+	
 	public List<Projeto> findAll(){
 		return dao.listaTudo();
 	}
